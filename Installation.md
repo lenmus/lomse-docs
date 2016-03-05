@@ -23,7 +23,7 @@ or a specific Release (i.e. 0.16.1)
 ```bash
 cd <projects>
 git clone -b '0.16.1' --single-branch --depth 1 https://github.com/lenmus/lomse.git
-cd lomse-0.16.1
+cd lomse
 ```
 
 Generate the makefiles, build, run unit tests and install:
@@ -80,7 +80,7 @@ or a specific Release (i.e. 0.16.1)
 ```bash
 cd <projects>
 git clone -b '0.16.1' --single-branch --depth 1 https://github.com/lenmus/lomse.git
-cd lomse-0.16.1
+cd lomse
 ```
 
 As an alternative, you can download a Sorce Code package from [Lomse Releases page](https://github.com/lenmus/lomse/releases), by visiting that page and clicking on the package. Alrenatively, you can do it from a command console. For instance, to download source code for release 0.16.1:
