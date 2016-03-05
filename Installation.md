@@ -87,7 +87,7 @@ As an alternative, you can download a Sorce Code package from [Lomse Releases pa
 ```bash
 cd <projects>
 wget https://github.com/lenmus/lomse/archive/0.16.1.tar.gz
-tar xzf lomse-0.16.1.tar.gz
+tar xzf 0.16.1.tar.gz
 cd lomse-0.16.1
 ```
 
