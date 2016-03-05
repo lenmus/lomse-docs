@@ -56,7 +56,6 @@ To build the lomse library, the following software has to be installed in your s
 Please refer to each package website for installation instructions. In many Linux distros, these packages are already installed in your system, but if anyone is missing, normally you can install it using the package manager. For instance, in Ubuntu
 ```bash
 sudo apt-get install cmake cmake-data
-sudo apt-get install git
 sudo apt-get install libunittest++-dev
 sudo apt-get install libfreetype6-dev
 sudo apt-get install libpng++-dev
