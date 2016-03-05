@@ -100,7 +100,7 @@ your source tree is unchanged. Out-of-source builds are recommended.
 Create a directory to hold your build files (e.g. "build-lomse"), and move to it:
 
 ```bash
-mkdir build-lomse
+mkdir build
 cd build-lomse
 ```
 
@@ -111,9 +111,9 @@ with CMake build system. CMake can generate different kinds of
 native build files for your system (e.g. Unix Makefiles, Eclipse CDT 4.0
 project files, Visual Studio project files, etc.).
 
-Therefore, the first step is to generate a make file. For this you just have to run CMake. In the following command please replace '<lomse>' with the name of the folder containing the Lomse source code, normally 'lomse' if you has clones the master repo or 'lomse-x.y.z' if you have downloaded the release x.y.z:
+Therefore, the first step is to generate a make file. For this you just have to run CMake:
 ```bash
-cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../<lomse>
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../
 
 ```
 By default, Lomse library will be installed
@@ -131,9 +131,10 @@ The build should finish without errors.
 **Important**: In case of problems, before repeating all the build procedure (after fixing the errors), the makefile should be re-created. The safest way to proceed is to delete the whole content of the build folder and start again from step 3. So move to folder to build and clean all:
 
 ```bash
-    rm * -rf     #AWARE: BE SURE YOU ARE IN THE build-lomse FOLDER !!!!
+cd ..
+rm build-lomse -rf
 ```
-and repeat build process from step 3, after fixing the errors.
+and repeat build process from step 2, after fixing the errors.
 
 
 ### Step 5: Run unit tests ###
@@ -144,15 +145,15 @@ The build process also generates the unit test program. For running it just do:
 ```
 You will get an output similar to this one:
 ```bash
-    Lomse version 0.17.53-a19de1d. Library tests runner.
+Lomse version 0.17.53-a19de1d. Library tests runner.
 
-    Lomse build date: 2016-01-27 12:06:01 UTC
-    Path for tests scores: '<local-path>/test-scores/'
+Lomse build date: 2016-01-27 12:06:01 UTC
+Path for tests scores: '<local-path>/test-scores/'
 
-    Running all tests
+Running all tests
 
-    Success: 1405 tests passed.
-    Test time: 9.23 seconds.
+Success: 1405 tests passed.
+Test time: 9.23 seconds.
 
 ```
 The number of tests will grow over time, and the times reported will depend on your computer.
@@ -168,7 +169,6 @@ make example_1
 Finally, if no errors in the unit tests, install lomse:
 ```bash
 sudo make install
-
 ```
 That installs Lomse on your system. Lomse library is installed
 in [prefix]/lib and header files in [prefix]/include/lomse, with [prefix]
@@ -177,12 +177,11 @@ defaulting to usr/local if you didn't specify a different prefix in step 3.
 
 ### Step 7: Remove build folder and sources ###
 
-If you'd like, now you can remove build folder and sources- Remember to replace '<lomse>' with the name of the folder containing the Lomse source code, normally 'lomse' if you have cloned the master repo or 'lomse-x.y.z' if you have downloaded the release x.y.z
+If you'd like, now you can remove build folder and sources- Remember to replace '<lomse>' with the name of the folder containing the Lomse source code, normally 'lomse' or 'lomse-x.y.z'.
 ```bash
 cd ..
 rm build-lomse -rf      #remove build folder
 rm <lomse> -rf          #remove sources
-
 ```
 
 <a name="package">Building a binary package</a>
