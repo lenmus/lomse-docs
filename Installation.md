@@ -82,7 +82,7 @@ git clone -b '0.16.1' --single-branch --depth 1 https://github.com/lenmus/lomse.
 cd lomse
 ```
 
-As an alternative, you can download a Sorce Code package from [Lomse Releases page](https://github.com/lenmus/lomse/releases), by visiting that page and clicking on the package. Alrenatively, you can do it from a command console. For instance, to download source code for release 0.16.1:
+As an alternative, you can download a Source Code package from [Lomse Releases page](https://github.com/lenmus/lomse/releases), by visiting that page and clicking on the package. Alternatively, you can do it from a command console. For instance, to download source code for release 0.16.1:
 ```bash
 cd <projects>
 wget https://github.com/lenmus/lomse/archive/0.16.1.tar.gz
@@ -93,7 +93,7 @@ cd lomse-0.16.1
 
 ### Step 2: Create a folder for building ###
 
-When you generates the makefiles and build Lomse a lot of files are created and they have to go somewhere. The best apoproach is to put them in a completely separate directory, so that
+When you generate the makefiles and build Lomse a lot of files are created and they have to go somewhere. The best approach is to put them in a completely separate directory, so that
 your source tree is unchanged. Out-of-source builds are recommended. 
 
 Create a directory to hold your build files (e.g. "build-lomse"), and move to it:
@@ -117,7 +117,7 @@ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../
 ```
 By default, Lomse library will be installed
 in [prefix]/lib and header files in [prefix]/include/lomse, with [prefix]
-defaulting to usr/local.
+defaulting to /usr/local.
 
 
 ### Step 4: Build Lomse and run unit tests ###
@@ -171,7 +171,7 @@ sudo make install
 ```
 That installs Lomse on your system. Lomse library is installed
 in [prefix]/lib and header files in [prefix]/include/lomse, with [prefix]
-defaulting to usr/local if you didn't specify a different prefix in step 3.
+defaulting to /usr/local if you didn't specify a different prefix in step 3.
 
 
 ### Step 7: Remove build folder and sources ###
@@ -191,6 +191,6 @@ If you'd like to build a binary package for Debian systems, just do this after b
 make package
 ```
 
-After executing this command you wil find the package (i.e. lomse_0.16.1_amd64.deb) in the build folder.
+After executing this command you will find the package (i.e. lomse_0.16.1_amd64.deb) in the build folder.
 
 

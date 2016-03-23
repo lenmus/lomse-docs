@@ -9,7 +9,7 @@ Summary
 
 - The lomse master repo is keept always buildable and usable. Do not wait for an official release. **The master repo contains always the latest release!**
 
-**Important**: Please note that until Lomse has not reached version 1.0.0 these guidelines will not be followed. MINOR will be always changed when backwards incompatible changes in the API. But could also be changed due to a substancial change in architecture, API or other important changes.
+**Important**: Please note that until Lomse has not reached version 1.0.0 these guidelines will not be followed. MINOR will be always changed when backwards incompatible changes in the API. But could also be changed due to a substantial change in architecture, API or other important changes.
 
 
 Releases
@@ -19,7 +19,7 @@ Releases
 
 - Version information (MAJOR.MINOR.PATCH numbers) are **always updated after a merge**.
 
-- An 'Official Release' is just a point in time in which it is decided to tag the repo and to create binary packages. Oficial  releases are done only:
+- An 'Official Release' is just a point in time in which it is decided to tag the repo and to create binary packages. Official  releases are done only:
     - if MAJOR or MINOR numbers change, or
     - from time to time, when a significant accumulated number of changes since previous release.
 
@@ -47,9 +47,9 @@ Package versions have the form ‘MAJOR.MINOR.PATCH’, and are updated by the f
 Understanding the implications
 --------------------------------
 
-- A change in the MAJOR version must be interpreted as a milestone, normally due to a substancial change in architecture, API or other major changes, such as licensing. It must be assumed source and binary incompatibility with previous versions, althought this might not be true. Therefore, assume incompatibility and read release documentation.
+- A change in the MAJOR version must be interpreted as a milestone, normally due to a substantial change in architecture, API or other major changes, such as licensing. It must be assumed source and binary incompatibility with previous versions, although this might not be true. Therefore, assume incompatibility and read release documentation.
 
-- A change in the MINOR version number implies more functionality, features or significant fixes. Source code compatibility will be mostly preserved. That is, source code incompatibilities if any, will be minimal and limited to issues easy to fix in your code without reviewing the logic. I will not give guaranties about binary compatibility, althought it should be preserved unless you are using the library in not expected ways.
+- A change in the MINOR version number implies more functionality, features or significant fixes. Source code compatibility will be mostly preserved. That is, source code incompatibilities if any, will be minimal and limited to issues easy to fix in your code without reviewing the logic. I will not give guaranties about binary compatibility, although it should be preserved unless you are using the library in not expected ways.
 
 - Finally, changes in the PATCH level should be perfectly compatible, source and binary. It will include only bug fixes, refactoring code or changes not affecting the code.
 
