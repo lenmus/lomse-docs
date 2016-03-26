@@ -7,7 +7,7 @@ Summary
 
 - But the PATCH number is changed not only due to bug fixes but to any other backwards compatible change in the library not affecting the API, such as refactoring some code or any change in the repository not affecting the code.
 
-- The lomse master repo is keept always buildable and usable. Do not wait for an official release. **The master repo contains always the latest release!**
+- The lomse master repo is kept always buildable and usable. Do not wait for an official release. **The master repo contains always the latest release!**
 
 **Important**: Please note that until Lomse has not reached version 1.0.0 these guidelines will not be followed. MINOR will be always changed when backwards incompatible changes in the API. But could also be changed due to a substantial change in architecture, API or other important changes.
 
