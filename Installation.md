@@ -1,16 +1,46 @@
-Lomse library installation
-======================================
+# Lomse library installation
+
+##### IMPORTANT
+
+> Lomse distribution does not include makefiles. All makefiles are generated
+> with CMake build system. CMake can generate different kinds of
+> native build files for your system (e.g. Unix Makefiles, Eclipse CDT 4.0
+> project files, Visual Studio project files).
+>
+> You need CMake 2.8.10 or later on your platform.
+
 
 This document contains detailed instructions for building Lomse library and tests
 program from sources. If you find things that need to be fixed and would like to contribute, you are welcome. Thank you.
 
-* [Quick instructions](#quick)
-* [Detailed instructions](#detailed)
-* [Building a binary package](#package)
+- [Requirements](#requirements)
+- [Quick instructions](#quick)
+- [Detailed instructions](#detailed)
+- [Building a binary package](#package)
 
 
-<a name="quick">Quick instructions</a>
-----------------------------------------
+
+## <a name="requirements" />Requirements
+
+To build the lomse library, the following software should be installed in your system:
+
+- [CMake version 2.8.10 or higher](http://www.cmake.org)
+- [Git client](https://git-scm.com/)
+- [UnitTest++ 1.3.0 or higher](http://unittest-cpp.sourceforge.net/)
+- [FreeType 2.3.5-1 or higher](http://www.freetype.org/)
+- [zlib (note 1)](http://zlib.net/)
+- [libpng (note 1)](http://www.libpng.org/)
+
+
+Note 1. If your application is not going to deal with compressed files and/or PNG images, Lomse can be build without support for them and, in those cases, libraries libpng and/or zlib are not required.
+
+In Linux, normally all the required packages are already installed in your system, so normally you do not have
+to install them. For other  operating systems you will have to check if your system has these packages installed, and install any missing one. Please refer to each package website for instructions.
+
+
+
+
+## <a name="quick">Quick instructions
 
 Download lomse sources from master repository at GitHub, either the latest code:
 ```bash
@@ -38,8 +68,7 @@ sudo make install                       #install Lomse
 ```
 Done!
 
-<a name="detailed">Detailed instructions</a>
-----------------------------------------------
+## <a name="detailed">Detailed instructions
 
 
 ### Requirements ###
@@ -47,9 +76,9 @@ Done!
 To build the lomse library, the following software has to be installed in your system:
 
 - CMake version 2.8 or higher ([cmake.org](http://www.cmake.org))
+- A Git client ([Git client](https://git-scm.com/))
 - UnitTest++ 1.3.0 or higher ([unittest-cpp proyect](http://unittest-cpp.sourceforge.net/))
 - FreeType 2.3.5-1 or higher ([freetype.org](http://www.freetype.org/))
-- Boost 1.42 or higher ([boost.org](http://www.boost.org/))
 - zlib ([zlib.net](http://zlib.net/))
 - libpng ([libpng.org](http://www.libpng.org/))
 
@@ -60,7 +89,6 @@ sudo apt-get install libunittest++-dev
 sudo apt-get install libfreetype6-dev
 sudo apt-get install libpng++-dev
 sudo apt-get install zlib1g-dev
-sudo apt-get install libboost-date-time-dev libboost-thread-dev libboost-system-dev
 ```
 
 For other  operating systems you will have to check if your system has these packages installed, and install any missing one. Please refer to each package website for instructions.
@@ -96,11 +124,11 @@ cd lomse-0.16.1
 When you generate the makefiles and build Lomse a lot of files are created and they have to go somewhere. The best approach is to put them in a completely separate directory, so that
 your source tree is unchanged. Out-of-source builds are recommended. 
 
-Create a directory to hold your build files (e.g. "build-lomse"), and move to it:
+Create a directory to hold your build files (e.g. "build"), and move to it:
 
 ```bash
 mkdir build
-cd build-lomse
+cd build
 ```
 
 ### Step 3: Generate the makefiles ###
@@ -131,7 +159,7 @@ The build should finish without errors.
 
 ```bash
 cd ..
-rm build-lomse -rf
+rm build -rf
 ```
 and repeat build process from step 2, after fixing the errors.
 
@@ -179,12 +207,12 @@ defaulting to /usr/local if you didn't specify a different prefix in step 3.
 If you'd like, now you can remove build folder and sources- Remember to replace '<lomse>' with the name of the folder containing the Lomse source code, normally 'lomse' or 'lomse-x.y.z'.
 ```bash
 cd ..
-rm build-lomse -rf      #remove build folder
-rm <lomse> -rf          #remove sources
+rm build -rf      	#remove build folder
+rm <lomse> -rf      #remove sources
 ```
 
-<a name="package">Building a binary package</a>
---------------------------------------------------
+
+## <a name="package">Building a binary package
 
 If you'd like to build a binary package for Debian systems, just do this after building and testing (step 5):
 ```bash
