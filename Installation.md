@@ -91,6 +91,24 @@ sudo apt-get install libpng++-dev
 sudo apt-get install zlib1g-dev
 ```
 
+#### Requirements for Mac OS X ####
+
+First, install brew which is used for installing other library packages
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Use brew to install the dependencies
+```bash
+brew install cmake 
+brew install unittest-cpp
+brew install freetype
+brew install pkg-config        # Needed for building example tutorials
+```
+Note that `libpng` is automatically installed by installing `libfreetype` </br>
+`zlib` is already included in OS X
+
+
 For other  operating systems you will have to check if your system has these packages installed, and install any missing one. Please refer to each package website for instructions.
 
 
@@ -141,8 +159,12 @@ project files, Visual Studio project files, etc.).
 Therefore, the first step is to generate a make file. For this you just have to run CMake:
 ```bash
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../
-
 ```
+On OS X the install location for the pkg-config file needs to be changed by adding the `-DLOMSE_PKG_CONFIG_INSTALL` option as follows:
+```bash
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DLOMSE_PKG_CONFIG_INSTALL=/usr/local/lib/pkgconfig ../
+```
+
 By default, Lomse library will be installed
 in [prefix]/lib and header files in [prefix]/include/lomse, with [prefix]
 defaulting to /usr/local.
